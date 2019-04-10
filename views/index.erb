@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="refresh" content="60">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>GOV.UK Zendesk Display Screen</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1>Currently open Zendesk tickets</h1>
+        </div>
+      </div>
+      <div class="row">
+        <% number_of_tickets.each do |queue_name, number_of_tickets_in_queue| %>
+          <div class="col">
+            <h2 class="h1">
+              <%= number_of_tickets_in_queue %>
+              <small class="text-muted"><%= queue_name %></small>
+            </h2>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </body>
+</html>

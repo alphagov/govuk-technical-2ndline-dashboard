@@ -1,0 +1,30 @@
+{
+  "name": "GOV.UK Zendesk Display Screen",
+  "description": "Display screen for GOV.UK Zendesk ticket statistics",
+  "repository": "https://github.com/alphagov/govuk-zendesk-display-screen",
+  "env": {
+    "ZENDESK_SUBDOMAIN": {
+      "required": true
+    },
+    "ZENDESK_API_USERNAME": {
+      "required": true
+    },
+    "ZENDESK_API_TOKEN": {
+      "required": true
+    },
+    "ZENDESK_VIEW_ID": {
+      "required": true
+    },
+    "AUTH_USERNAME": {
+      "required": true
+    },
+    "AUTH_PASSWORD": {
+      "required": true
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/ruby"
+    }
+  ]
+}
