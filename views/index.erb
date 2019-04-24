@@ -24,7 +24,16 @@
           <% unless queue_name == 'low' && hide_low_queue %>
           <div class="col">
             <h2 class="h1">
-              <%= number_of_tickets_in_queue %>
+              <%
+                if number_of_tickets_in_queue >= 5
+                  number_colour = 'number-red'
+                elsif number_of_tickets_in_queue > 0
+                  number_colour = 'number-amber'
+                else
+                  number_colour = 'number-green'
+                end
+              %>
+              <span class="<%= number_colour %>"><%= number_of_tickets_in_queue %></span>
               <small class="text-muted"><%= queue_name %></small>
             </h2>
           </div>
