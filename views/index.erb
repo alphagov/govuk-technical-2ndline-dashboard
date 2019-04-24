@@ -21,12 +21,14 @@
       </div>
       <div class="row">
         <% number_of_tickets.each do |queue_name, number_of_tickets_in_queue| %>
+          <% unless queue_name == 'low' && hide_low_queue %>
           <div class="col">
             <h2 class="h1">
               <%= number_of_tickets_in_queue %>
               <small class="text-muted"><%= queue_name %></small>
             </h2>
           </div>
+          <% end %>
         <% end %>
       </div>
     </div>

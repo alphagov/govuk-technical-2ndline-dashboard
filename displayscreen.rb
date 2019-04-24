@@ -34,10 +34,11 @@ end
 get '/' do
   user_protected!
   dark_mode = true unless params[:dark_mode] && params[:dark_mode] == 'false'
+  hide_low_queue = true unless params[:hide_low_queue] && params[:hide_low_queue] == 'false'
   number_of_tickets = {}
   # This would be much nicer if we could get ticket counts broken down by priority from the Zendesk API
   zendesk.view.find!(id: ENV['ZENDESK_VIEW_ID']).tickets.all! do |ticket|
     number_of_tickets[ticket['priority']] = number_of_tickets[ticket['priority']].to_i.next
   end
-  erb :index, locals: { dark_mode: dark_mode, number_of_tickets: number_of_tickets }
+  erb :index, locals: { number_of_tickets: number_of_tickets, dark_mode: dark_mode, hide_low_queue: hide_low_queue }
 end
