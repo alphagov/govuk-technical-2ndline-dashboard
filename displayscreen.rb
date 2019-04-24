@@ -1,6 +1,10 @@
 require 'sinatra'
 require 'zendesk_api'
 
+configure do
+  set :protection, :except => :frame_options
+end
+
 helpers do
   def user_protected!
     return if user_authorized?
