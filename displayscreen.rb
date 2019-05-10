@@ -38,6 +38,9 @@ get '/' do
   number_of_tickets = {}
   # This would be much nicer if we could get ticket counts broken down by priority from the Zendesk API
   zendesk.view.find!(id: ENV['ZENDESK_VIEW_ID']).tickets.all! do |ticket|
+    status = ticket.status.fetch("status", "new")
+    next if %w(hold pending solved closed).include?(status)
+
     number_of_tickets[ticket['priority']] = number_of_tickets[ticket['priority']].to_i.next
   end
   erb :index, locals: { number_of_tickets: number_of_tickets, dark_mode: dark_mode, hide_low_queue: hide_low_queue }
