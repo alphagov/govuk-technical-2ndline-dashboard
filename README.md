@@ -16,7 +16,7 @@ All stats are coloured green if they are 0, amber if they are between 1 and 4, a
 
 Dark mode is set by default and results in a dark background and light text. To disable dark mode, add `?dark_mode=false` to the URL.
 
-### Hiding the low queue
+### Hiding the low queue
 
 The low queue is regularly used for tickets that are handed off to others or awaiting some other action, therefore the display screen hides it by default. To show it, add `?hide_low_queue=false` to the URL.
 
