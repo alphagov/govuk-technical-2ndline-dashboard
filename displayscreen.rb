@@ -2,7 +2,7 @@ require 'sinatra'
 require 'zendesk_api'
 
 configure do
-  set :protection, :except => :frame_options
+  set :protection, except: :frame_options
 end
 
 helpers do
