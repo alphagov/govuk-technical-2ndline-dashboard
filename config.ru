@@ -1,3 +1,3 @@
-require 'bundler/setup'
-require './displayscreen'
+require "bundler/setup"
+require "./displayscreen"
 run Sinatra::Application
