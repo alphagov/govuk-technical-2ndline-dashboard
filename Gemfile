@@ -9,6 +9,6 @@ gem 'sinatra-contrib'
 gem 'zendesk_api'
 
 group :test, :development do
-  gem 'govuk-lint'
   gem 'pry-byebug'
+  gem "rubocop-govuk"
 end
