@@ -1,0 +1,17 @@
+version: 2
+updates:
+  - package-ecosystem: bundler
+    directory: /
+    schedule:
+      interval: daily
+    allow:
+      # Internal gems
+      - dependency-name: rubocop-govuk
+        dependency-type: direct
+      # Framework gems
+      - dependency-name: puma
+        dependency-type: direct
+      - dependency-name: rack
+        dependency-type: direct
+      - dependency-name: sinatra
+        dependency-type: direct
