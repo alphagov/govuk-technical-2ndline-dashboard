@@ -36,10 +36,10 @@ get "/" do
   dark_mode = true unless params[:dark_mode] && params[:dark_mode] == "false"
   hide_low_queue = true unless params[:hide_low_queue] && params[:hide_low_queue] == "false"
   number_of_tickets = { "high" => 0, "normal" => 0, "low" => 0 }
-  # This would be much nicer if we could get ticket counts broken down by priority from the Zendesk API
+  #  This would be much nicer if we could get ticket counts broken down by priority from the Zendesk API
   zendesk.view.find!(id: ENV["ZENDESK_VIEW_ID"]).tickets.all! do |ticket|
     status = ticket.fetch("status", "new")
-    next if %w(hold pending solved closed).include?(status)
+    next if %w[hold pending solved closed].include?(status)
 
     number_of_tickets[ticket["priority"]] = number_of_tickets[ticket["priority"]].to_i.next
   end
