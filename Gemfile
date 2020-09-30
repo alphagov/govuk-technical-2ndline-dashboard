@@ -1,7 +1,5 @@
 source "https://rubygems.org"
 
-ruby File.read(".ruby-version").strip
-
 gem "puma"
 gem "rack"
 gem "sinatra"
