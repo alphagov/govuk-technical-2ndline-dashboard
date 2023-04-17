@@ -1,7 +1,7 @@
 {
-  "name": "GOV.UK Zendesk Display Screen",
-  "description": "Display screen for GOV.UK Zendesk ticket statistics",
-  "repository": "https://github.com/alphagov/govuk-zendesk-display-screen",
+  "name": "GOV.UK Technical 2nd Line dashboard",
+  "description": "Dashboard screen for GOV.UK Technical 2nd Line team",
+  "repository": "https://github.com/alphagov/govuk-technical-2ndline-dashboard",
   "env": {
     "ZENDESK_SUBDOMAIN": {
       "required": true
