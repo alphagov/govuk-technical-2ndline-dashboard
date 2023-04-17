@@ -1,6 +1,14 @@
 require "sinatra"
 require "zendesk_api"
 
+DISPLAY_SCREEN_TITLE = "2nd line dashboard".freeze
+DISPLAY_SCREEN_LAYOUT = "2x1".freeze
+DISPLAY_SCREEN_FRAMES = [
+  "/summary",
+  "/zendesk?hide_low_queue=false",
+  "/blinken",
+].freeze
+
 configure do
   set :protection, except: :frame_options
 end
@@ -32,6 +40,26 @@ unless ENV["ZENDESK_SUBDOMAIN"] && ENV["ZENDESK_API_USERNAME"] && ENV["ZENDESK_A
 end
 
 get "/" do
+  frames = DISPLAY_SCREEN_FRAMES.map { |frame| "&url%5B%5D=#{ERB::Util.url_encode(frame)}" }.join("")
+  [302, { "Location" => "/frame-splits?title=#{ERB::Util.url_encode(DISPLAY_SCREEN_TITLE)}&layout=#{ERB::Util.url_encode(DISPLAY_SCREEN_LAYOUT)}&#{frames}" }, []]
+end
+
+get "/frame-splits" do
+  # the intention is for this page to only be arrived at via `/`, which redirects with the required parameters
+  erb "frame-splits".to_sym, locals: {}
+end
+
+get "/summary" do
+  dark_mode = true unless params[:dark_mode] && params[:dark_mode] == "false"
+
+  erb :summary, locals: { dark_mode: dark_mode }
+end
+
+get "/blinken" do
+  erb :blinken, locals: {}
+end
+
+get "/zendesk" do
   user_protected!
   dark_mode = true unless params[:dark_mode] && params[:dark_mode] == "false"
   hide_low_queue = true unless params[:hide_low_queue] && params[:hide_low_queue] == "false"
@@ -43,5 +71,5 @@ get "/" do
 
     number_of_tickets[ticket["priority"]] = number_of_tickets[ticket["priority"]].to_i.next
   end
-  erb :index, locals: { number_of_tickets: number_of_tickets, dark_mode: dark_mode, hide_low_queue: hide_low_queue }
+  erb :zendesk, locals: { number_of_tickets: number_of_tickets, dark_mode: dark_mode, hide_low_queue: hide_low_queue }
 end
