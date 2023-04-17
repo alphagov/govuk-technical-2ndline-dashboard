@@ -1,0 +1,125 @@
+/* http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+html { box-sizing: border-box; } *, *:before, *:after { box-sizing: inherit; }
+
+
+html, body {
+  height: 100%;
+  font: medium/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.build-link a {
+  display: block;
+  width: 100%;
+  padding: 1em;
+
+  font-size: 2em;
+}
+
+.js-enabled .build-link {
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  margin-top: -150px;
+  padding-bottom: 100px;
+
+  text-align: center;
+
+  transition: margin-top ease .75s;
+}
+
+.js-enabled .build-link a {
+  background: #222;
+  color: #fff;
+  border-bottom: 4px solid #000;
+}
+
+.js-enabled .build-link:hover {
+  margin-top: 0px;
+}
+
+.container,
+.layout {
+  height: 100%;
+}
+
+.layout {
+  overflow: hidden;
+}
+
+.layout .item {
+  float: left;
+  height: 100%;
+  width: 100%;
+  border: 2px solid #000;
+}
+
+/**
+    Layouts
+*/
+
+.layout-2row .item { height: 50%; }
+
+.layout-2col .item { width: 50%; }
+
+.layout-2col-75-25 .item:first-child { width: 75%; }
+.layout-2col-75-25 .item { width: 25%; }
+
+.layout-3row .item { height: 33.3%; }
+
+.layout-3col .item { width: 33.3%; }
+
+.layout-2x2 .item { width: 50%; height: 50%; }
+
+.layout-2x1 .item { width: 50%; height: 50%; }
+.layout-2x1 .item-1 { height: 100%; }
+
+.layout-2x1-75-25 .item-1 { float: right; width: 25%; height: 100%; }
+.layout-2x1-75-25 .item-2 { width: 75%; height: 75%; }
+.layout-2x1-75-25 .item-3 { width: 75%; height: 25%; }
+
+.layout-2x1-responsive .item-1 { float: right; width: 25%; height: 100%; }
+.layout-2x1-responsive .item-2 { width: 75%; height: 75%; }
+.layout-2x1-responsive .item-3 { width: 75%; height: 25%; }
+
+@media (max-width: 980px) {
+  .layout-2x1-responsive .item-1 { width: 40%; }
+  .layout-2x1-responsive .item-2 { width: 60%; }
+  .layout-2x1-responsive .item-3 { width: 60%; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* duration | easing-function | delay | iteration-count | direction | fill-mode | play-state | name */
+  .layout-thumb.layout-2x1-responsive .item-1 {
+    animation: 2s linear 0s infinite normal none running column1animation;
+  }
+
+  .layout-thumb.layout-2x1-responsive .item-2,
+  .layout-thumb.layout-2x1-responsive .item-3 {
+    animation: 2s linear 0s infinite normal none running column2animation;
+  }
+
+  @keyframes column1animation {
+    0% { width: 40%; }
+    50% { width: 60%; }
+    100% { width: 40%; }
+  }
+  @keyframes column2animation {
+    0% { width: 60%; }
+    50% { width: 40%; }
+    100% { width: 60%; }
+  }
+}
+
+.layout-2x1ish .item { width: 67%; height: 50%; }
+.layout-2x1ish .item-1 { height: 100%; width: 33%; }
+
+.layout-1x2 .item { width: 50%; height: 67%; }
+.layout-1x2 .item-1 { height: 33%; width: 100%; }
+
+.layout-banner-plus-3col .item { width: 33.3%; height: 67%; }
+.layout-banner-plus-3col .item-1 { width: 100%; height: 33%; }
+
+.layout-sidebar-plus-3row .item { width: 50%; height: 33%; }
+.layout-sidebar-plus-3row .item:last-child { width: 50%; height: 34%; }
+.layout-sidebar-plus-3row .item-1 { width: 50%; height: 100%; }

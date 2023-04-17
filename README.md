@@ -1,12 +1,29 @@
-# GOV.UK Zendesk Display Screen
+# GOV.UK Technical 2nd line dashboard
 
-Displays some high-level statistics from a given Zendesk view. Used to display the number of tickets currently on the 2nd line queue.
+Displays high-level statistics from Zendesk and Icinga, and links to useful resources.
+This dashboard is a Sinatra app, hosted on Heroku, and intended to be used by GOV.UK Technical 2nd line.
 
-![GOV.UK Zendesk Display Screen](docs/displayscreen.png)
+## Using the dashboard
 
-## Running
+Bookmark `https://govuk-zendesk-display-screen.herokuapp.com/`. It will automatically redirect to the latest iteration of the dashboard. Try to avoid bookmarking the `/frame-splits` URL itself, as then you won't benefit from future changes.
 
-`ZENDESK_SUBDOMAIN=govuk ZENDESK_API_USERNAME=something@example.com ZENDESK_API_TOKEN=ABCDEFG ZENDESK_VIEW_ID=123456789 AUTH_USERNAME=username AUTH_PASSWORD=password bundle exec puma`
+## Running the app locally
+
+Replace the following variables with values [retrieved from Heroku](https://dashboard.heroku.com/apps/govuk-zendesk-display-screen/settings).
+
+```
+ZENDESK_SUBDOMAIN='govuk' \
+ZENDESK_VIEW_ID='30791708' \
+ZENDESK_API_USERNAME='something@example.com' \
+ZENDESK_API_TOKEN='ABCDEFG' \
+AUTH_USERNAME='username' \
+AUTH_PASSWORD='password' \
+bundle exec puma
+```
+
+## Configuring the frame splits
+
+Edit the constants at the top of `displayscreen.rb` to adjust the layout or the `src` of any frame.
 
 ### Colour coding
 
@@ -19,6 +36,12 @@ Dark mode is set by default and results in a dark background and light text. To 
 ### Hiding the low queue
 
 The low queue is regularly used for tickets that are handed off to others or awaiting some other action, therefore the display screen hides it by default. To show it, add `?hide_low_queue=false` to the URL.
+
+## Screenshots
+
+- ![GOV.UK Technical 2nd line Dashboard layout](docs/layout.png)
+- ![GOV.UK Zendesk Display Screen](docs/zendesk.png)
+- ![GOV.UK Icinga alerts "Blinken" screen](docs/blinken.png)
 
 ## Licence
 

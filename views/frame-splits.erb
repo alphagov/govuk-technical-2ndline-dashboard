@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="assets/css/reset.css" type="text/css" />
+  <link rel="stylesheet" href="assets/css/main.css" type="text/css" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="layout layout-frames">
+    </div>
+  </div>
+
+  <script src="assets/js/jquery-2.2.4.min.js"></script>
+  <script src="assets/js/query-param.js"></script>
+  <script src="assets/js/frame-splits.js"></script>
+
+  <script>
+  $(function() {
+    var view = new FrameView($('.container .layout')),
+      params = getQueryParams(document.location.search);
+
+    view.render(params.layout, params.url, params.title);
+  });
+  </script>
+</body>
+</html>
