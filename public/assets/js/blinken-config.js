@@ -5,19 +5,19 @@ var blinken_config = {
       "name": "",
       "environments": [
         {
-          "name": "Production (AWS)",
+          "name": "Production (EC2)",
           "url": "https://alert.blue.production.govuk.digital"
         },
         {
-          "name": "Staging (AWS)",
+          "name": "Staging (EC2)",
           "url": "https://alert.blue.staging.govuk.digital"
         },
         {
-          "name": "Integration",
+          "name": "Integration (EC2)",
           "url": "https://alert.integration.publishing.service.gov.uk"
         },
         {
-          "name": "CI",
+          "name": "CI (EC2)",
           "url": "https://alert.blue.integration.govuk.digital"
         }
       ]
