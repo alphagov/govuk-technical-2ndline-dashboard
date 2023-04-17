@@ -5,11 +5,11 @@ This dashboard is a Sinatra app, hosted on Heroku, and intended to be used by GO
 
 ## Using the dashboard
 
-Bookmark `https://govuk-zendesk-display-screen.herokuapp.com/`. It will automatically redirect to the latest iteration of the dashboard. Try to avoid bookmarking the `/frame-splits` URL itself, as then you won't benefit from future changes.
+Bookmark `https://govuk-2ndline-dashboard.herokuapp.com/`. It will automatically redirect to the latest iteration of the dashboard. Try to avoid bookmarking the `/frame-splits` URL itself, as then you won't benefit from future changes.
 
 ## Running the app locally
 
-Replace the following variables with values [retrieved from Heroku](https://dashboard.heroku.com/apps/govuk-zendesk-display-screen/settings).
+Replace the following variables with values [retrieved from Heroku](https://dashboard.heroku.com/apps/govuk-2ndline-dashboard/settings).
 
 ```
 ZENDESK_SUBDOMAIN='govuk' \
