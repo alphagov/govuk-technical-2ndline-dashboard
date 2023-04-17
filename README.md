@@ -1,7 +1,7 @@
-# GOV.UK 2nd Line Display Screen
+# GOV.UK Technical 2nd line dashboard
 
 Displays high-level statistics from Zendesk and Icinga, and links to useful resources.
-This dashboard is a Sinatra app, hosted on Heroku, and intended to be used by Technical 2nd line.
+This dashboard is a Sinatra app, hosted on Heroku, and intended to be used by GOV.UK Technical 2nd line.
 
 ## Using the dashboard
 
@@ -39,7 +39,7 @@ The low queue is regularly used for tickets that are handed off to others or awa
 
 ## Screenshots
 
-- ![GOV.UK 2nd line Display Screen layout](docs/layout.png)
+- ![GOV.UK Technical 2nd line Dashboard layout](docs/layout.png)
 - ![GOV.UK Zendesk Display Screen](docs/zendesk.png)
 - ![GOV.UK Icinga alerts "Blinken" screen](docs/blinken.png)
 

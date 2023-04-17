@@ -1,7 +1,7 @@
 require "sinatra"
 require "zendesk_api"
 
-DISPLAY_SCREEN_TITLE = "2nd line dashboard".freeze
+DISPLAY_SCREEN_TITLE = "GOV.UK Technical 2nd line dashboard".freeze
 DISPLAY_SCREEN_LAYOUT = "2x1".freeze
 DISPLAY_SCREEN_FRAMES = [
   "/summary",
