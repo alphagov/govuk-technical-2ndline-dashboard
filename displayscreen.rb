@@ -73,3 +73,7 @@ get "/zendesk" do
   end
   erb :zendesk, locals: { number_of_tickets: number_of_tickets, dark_mode: dark_mode, hide_low_queue: hide_low_queue }
 end
+
+get "/build" do
+  erb :build, locals: {}
+end

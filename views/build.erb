@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="/assets/css/reset.css" type="text/css" />
+  <link rel="stylesheet" href="/assets/css/build.css" type="text/css" />
+</head>
+
+<body class="build">
+  <div class="container">
+  <form action="/frame-splits">
+    <section class="title">
+      <h2>About the frame-split</h2>
+      <label for="title">Title</label>
+      <input type="text" id="title" name="title" value="" placeholder="'My fancy graphs', 'My teams radiator'" />
+    </section>
+    <section class="layouts">
+      <h2>Pick Layout</h2>
+      <ol>
+        <li>
+          <label for="layout-2row">
+            <input type="radio" id="layout-2row" name="layout" value="2row">
+            <span>2row</span>
+          </label>
+        </li>
+
+        <li>
+          <label for="layout-2col">
+            <input type="radio" id="layout-2col" name="layout" value="2col">
+            <span>2col</span>
+          </label>
+        </li>
+
+        <li>
+          <label for="layout-2col-75-25">
+            <input type="radio" id="layout-2col-75-25" name="layout" value="2col-75-25">
+            <span>2col-75-25</span>
+          </label>
+        </li>
+
+        <li>
+          <label for="layout-3row">
+            <input type="radio" id="layout-3row" name="layout" value="3row">
+            <span>3row</span>
+          </label>
+        </li>
+
+        <li>
+          <label for="layout-3col">
+            <input type="radio" id="layout-3col" name="layout" value="3col">
+            <span>3col</span>
+          </label>
+        </li>
+
+        <li>
+          <label for="layout-2x2">
+            <input type="radio" id="layout-2x2" name="layout" value="2x2">
+            <span>2x2</span>
+          </label>
+        </li>
+
+        <li>
+          <label for="layout-2x1">
+            <input type="radio" id="layout-2x1" name="layout" value="2x1">
+            <span>2x1</span>
+          </label>
+        </li>
+
+        <li>
+          <label for="layout-2x1-75-25">
+            <input type="radio" id="layout-2x1-75-25" name="layout" value="2x1-75-25">
+            <span>2x1-75-25</span>
+          </label>
+        </li>
+
+        <li>
+          <label for="layout-2x1-responsive">
+            <input type="radio" id="layout-2x1-responsive" name="layout" value="2x1-responsive">
+            <span>2x1-responsive</span>
+          </label>
+        </li>
+
+        <li>
+          <label for="layout-sidebar-plus-3row">
+            <input type="radio" id="layout-sidebar-plus-3row" name="layout" value="sidebar-plus-3row">
+            <span>sidebar-plus-3row</span>
+          </label>
+        </li>
+
+        <li>
+          <label for="layout-2x1ish">
+            <input type="radio" id="layout-2x1ish" name="layout" value="2x1ish">
+            <span>2x1ish</span>
+          </label>
+        </li>
+
+        <li>
+          <label for="layout-1x2">
+            <input type="radio" id="layout-1x2" name="layout" value="1x2">
+            <span>1x2</span>
+          </label>
+        </li>
+
+        <li>
+          <label for="layout-banner-plus-3col">
+            <input type="radio" id="layout-banner-plus-3col" name="layout" value="banner-plus-3col">
+            <span>banner-plus-3col</span>
+          </label>
+        </li>
+      </ol>
+    </section>
+
+    <section class="urls">
+      <h2>Set URLs</h2>
+
+      <ol>
+        <li>
+          <label for="url_1">URL #1</label>
+          <input type="text" id="url_1" name="url[]" value="" />
+        </li>
+
+        <li>
+          <label for="url_2">URL #2</label>
+          <input type="text" id="url_2" name="url[]" value="" />
+        </li>
+
+        <li>
+          <label for="url_3">URL #3</label>
+          <input type="text" id="url-3" name="url[]" value="" />
+        </li>
+
+        <li>
+          <label for="url_4">URL #4</label>
+          <input type="text" id="url_4" name="url[]" value="" />
+        </li>
+      </ol>
+    </section>
+
+    <section class="controls">
+      <input type="submit" value="Build Layout" />
+    </section>
+
+  </form>
+  </div>
+
+  <script src="/assets/js/jquery-2.2.4.min.js"></script>
+  <script src="/assets/js/query-param.js"></script>
+  <script src="/assets/js/build.js"></script>
+  <script>
+  $(function() {
+    var params = getQueryParams(document.location.search),
+        view = new BuildView($('body'));
+
+    view.update(params);
+  });
+  </script>
+</body>
+</html>
