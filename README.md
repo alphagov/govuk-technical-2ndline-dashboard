@@ -25,6 +25,8 @@ bundle exec puma
 
 Edit the constants at the top of `displayscreen.rb` to adjust the layout or the `src` of any frame.
 
+You can visit the `/build` endpoint to experiment with different dashboard layouts and sources.
+
 ### Colour coding
 
 All stats are coloured green if they are 0, amber if they are between 1 and 4, and red if they are 5 or over.
