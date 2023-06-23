@@ -14,13 +14,6 @@ configure do
 end
 
 helpers do
-  def user_protected!
-    return if user_authorized?
-
-    headers["WWW-Authenticate"] = 'Basic realm="GOV.UK Zendesk Display Screen"'
-    halt 401
-  end
-
   def user_authorized?
     @auth ||= Rack::Auth::Basic::Request.new(request.env)
     @auth.provided? && @auth.basic? && @auth.credentials && @auth.credentials == [ENV["AUTH_USERNAME"], ENV["AUTH_PASSWORD"]]
@@ -60,7 +53,6 @@ get "/blinken" do
 end
 
 get "/zendesk" do
-  user_protected!
   dark_mode = true unless params[:dark_mode] && params[:dark_mode] == "false"
   hide_low_queue = true unless params[:hide_low_queue] && params[:hide_low_queue] == "false"
   number_of_tickets = { "high" => 0, "normal" => 0, "low" => 0 }
