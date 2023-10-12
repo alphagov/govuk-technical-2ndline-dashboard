@@ -12,3 +12,9 @@ jobs:
           restore-keys: bundle
       - run: bundle install --jobs 4 --retry 3 --deployment
       - run: bundle exec rubocop
+
+  codeql-sast:
+    name: CodeQL SAST scan
+    uses: alphagov/govuk-infrastructure/.github/workflows/codeql-analysis.yml@main
+    permissions:
+      security-events: write
