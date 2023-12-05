@@ -63,7 +63,7 @@ get "/zendesk" do
 
     number_of_tickets[ticket["priority"]] = number_of_tickets[ticket["priority"]].to_i.next
   end
-  erb :zendesk, locals: { number_of_tickets: number_of_tickets, dark_mode: dark_mode, hide_low_queue: hide_low_queue }
+  erb :zendesk, locals: { zendesk_url: "https://govuk.zendesk.com/agent/filters/#{ENV['ZENDESK_VIEW_ID']}", number_of_tickets: number_of_tickets, dark_mode: dark_mode, hide_low_queue: hide_low_queue }
 end
 
 get "/build" do
