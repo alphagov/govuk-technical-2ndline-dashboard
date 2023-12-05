@@ -111,7 +111,7 @@
 
         var environment_block = '<div class="col-md-3">' +
                                 '<a href="' + environment.environment_url + '"' +
-                                '   target="_blank"' +
+                                '   target="_top"' +
                                 '   class="blinken-environment ' + environment_style_class + '"' +
                                 '>' +
                                 '<p class="blinken-timestamp">' + environment.timestamp + '</p>' +
