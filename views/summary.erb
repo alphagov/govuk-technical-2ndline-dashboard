@@ -21,24 +21,45 @@
       <hr />
 
       <div class="row">
-        <h2>About this dashboard</h2>
-        <p>
-            You need to be on the VPN to see the <strong>Icinga frame</strong> (bottom right). Note that there are currently a lot of ignorable alerts - the only ones you will want to pay attention to are:
-        </p>
+        <h2>Useful links</h2>
+      </div>
+
+      <div class="row">
         <ul>
-            <li>“scheduled publications in Whitehall not queued” / “overdue publications in Whitehall”
-            <li>“Travel Advice email alert check” / “Medical Safety Email alert check”</li>
-            <li>Anything to do with Licensify</li>
+          <li><a href="https://trello.com/b/M7UzqXpk/govuk-technical-2nd-line" target="_top">Technical 2nd line Trello board</a></li>
+          <li><a href="https://docs.publishing.service.gov.uk/" target="_top">GOV.UK Developer Docs</a></li>
+          <li><a href="https://docs.publishing.service.gov.uk/manual/2nd-line.html" target="_top">Guide to Technical 2nd line</a></li>
+          <li><a href="https://docs.publishing.service.gov.uk/manual/zendesk.html" target="_top">Guide to Zendesk</a> and <a href="https://docs.google.com/presentation/d/1EotoM2CVtqlnx54Qz5bP7OyIx5c9ji_GptUuymHkBrc/edit" target="_top">Zendesk triaging guide</a></li>
+          <li><a href="https://docs.publishing.service.gov.uk/manual/on-call.html" target="_top">Production Access guide</a> and <a href="https://docs.google.com/presentation/d/10oRKrXqYki7LSFUySjb1e_FdTYGLihMKjeoH9qWC1kU/edit" target="_top">associated flow diagram</a></li>
+          <li><a href="https://docs.publishing.service.gov.uk/manual/2nd-line-drills.html" target="_top">Technical 2nd line Drills</a></li>
+          <li><a href="https://docs.publishing.service.gov.uk/kubernetes/cheatsheet.html" target="_top">Docs on GOV.UK EKS/Kubernetes infrastructure</a></li>
         </ul>
       </div>
 
       <div class="row">
-        <h2>Other resources</h2>
+        <h2>Dashboards</h2>
+      </div>
+
+      <div class="row">
+        <h3>Requests</h3>
+      </div>
+
+      <div class="row">
         <ul>
-            <li>See the <a href="https://docs.publishing.service.gov.uk/kubernetes/cheatsheet.html" target="_top">EKS/Kubernetes infrastructure</a> page in the Developer Docs.</li>
-            <li>See the <a href="https://govuk-kubernetes-cluster-user-docs.publishing.service.gov.uk/" target="_top">GOV.UK Kubernetes platform user documentation</a>. This will eventually be absorbed into the Developer Docs.</li>
-            <li>Dashboards are on <a href="https://grafana.eks.production.govuk.digital/" target="_top">https://grafana.eks.production.govuk.digital/</a> and no longer require VPN. Don’t get confused by the <a href="https://grafana.production.govuk.digital" target="_top">old Grafana</a>.</li>
-            <li>See Sidekiq queue lengths and age-of-oldest-job on the <a href="https://grafana.eks.production.govuk.digital/d/sidekiq-queues/sidekiq3a-queue-length-max-delay" target="_top">Sidekiq Grafana dashboard</a>. The <a href="https://sidekiq-monitoring.integration.govuk.digital/publishing-api/queues" target="_top">old detailed Sidekiq dashboard</a> is not yet available for EKS.</li>
+          <li><a href="https://grafana.eks.production.govuk.digital/d/app-requests/app3a-request-rates-errors-durations?orgId=1&refresh=1m" target="_top">App request rates, errors, durations</a></li>
+          <li><a href="https://grafana.eks.production.govuk.digital/d/router-requests/router3a-request-rates-errors-durations?orgId=1" target="_top">Router request rates, errors, durations</a></li>
+          <li><a href="https://grafana.eks.production.govuk.digital/d/bf166f12-d1d7-4c99-98bd-6b9d90dbd1ae/static-mirror-requests?orgId=1" target="_top">Static mirror requests</a></li>
+        </ul>
+      </div>
+
+      <div class="row">
+        <h3>Sidekiq</h3>
+      </div>
+  
+      <div class="row">
+        <ul>
+          <li><a href="https://grafana.eks.production.govuk.digital/d/sidekiq-queues/sidekiq3a-queue-length-max-delay" target="_top">Sidekiq queue lengths and age-of-oldest-job</a></li>
+          <li><a href="https://grafana.eks.production.govuk.digital/d/mq/amqp-message-queues-amazonmq?orgId=1" target="_top">AMQP message queues (AmazonMQ)</a></li>
         </ul>
       </div>
     </div>
