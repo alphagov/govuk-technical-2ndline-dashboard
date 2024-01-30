@@ -2,11 +2,10 @@ require "sinatra"
 require "zendesk_api"
 
 DISPLAY_SCREEN_TITLE = "GOV.UK Technical 2nd line dashboard".freeze
-DISPLAY_SCREEN_LAYOUT = "2x1".freeze
+DISPLAY_SCREEN_LAYOUT = "2col".freeze
 DISPLAY_SCREEN_FRAMES = [
   "/summary",
   "/zendesk?hide_low_queue=false",
-  "/blinken",
 ].freeze
 
 configure do
@@ -46,10 +45,6 @@ get "/summary" do
   dark_mode = true unless params[:dark_mode] && params[:dark_mode] == "false"
 
   erb :summary, locals: { dark_mode: dark_mode }
-end
-
-get "/blinken" do
-  erb :blinken, locals: {}
 end
 
 get "/zendesk" do
