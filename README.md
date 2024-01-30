@@ -43,7 +43,6 @@ The low queue is regularly used for tickets that are handed off to others or awa
 
 - ![GOV.UK Technical 2nd line Dashboard layout](docs/layout.png)
 - ![GOV.UK Zendesk Display Screen](docs/zendesk.png)
-- ![GOV.UK Icinga alerts "Blinken" screen](docs/blinken.png)
 
 ## Licence
 
