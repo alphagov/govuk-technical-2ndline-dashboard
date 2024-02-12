@@ -17,7 +17,8 @@ jobs:
           path: vendor/bundle
           key: bundle-${{ hashFiles('**/Gemfile.lock') }}
           restore-keys: bundle
-      - run: bundle install --jobs 4 --retry 3 --deployment
+      - run: bundle install --jobs 4 --retry 3
+      - run: bundle config set deployment true
       - run: bundle exec rubocop
 
   codeql-sast:
